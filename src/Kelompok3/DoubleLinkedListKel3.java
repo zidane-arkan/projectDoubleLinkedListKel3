@@ -1,6 +1,7 @@
 package Kelompok3;
 
 import java.util.Scanner;
+import java.util.LinkedList;
 
 //import linkedList.ManualDoubleLinkedList.Node;
 //import linkedList.ManualDoubleLinkedList;
@@ -19,18 +20,11 @@ public class DoubleLinkedListKel3 {
         System.out.println("2. PUSTAKA");
         System.out.println("3. KELUAR");
         System.out.print("Silahkan Pilih [1/2/3] : ");inputUser = input.next();
-        switch(inputUser) {
-            case "1" :
-                pilihOperasiLinkedList();
-                break;
-            case "2" :
-                System.out.println("2. PUSTAKA");
-                break;
-            case "3":
-                System.out.println("*** PROGRAM BERAKHIR ***");
-                break;
-            default :
-                System.out.println("Nilai yang anda masukkan salah");
+        switch (inputUser) {
+            case "1" -> pilihOperasiLinkedList();
+            case "2" -> System.out.println("2. PUSTAKA");
+            case "3" -> System.out.println("*** PROGRAM BERAKHIR ***");
+            default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
@@ -45,21 +39,12 @@ public class DoubleLinkedListKel3 {
         System.out.println("4. Kembali");
         System.out.print("Silahkan Pilih [1/2/3/4] : ");inputUser = input.next();
         System.out.println();
-        switch(inputUser) {
-            case "1" :
-                pilihOperasiTambahData();
-                break;
-            case "2" :
-                pilihOperasiHapusData();
-                break;
-            case "3":
-                pilihOperasiCariUbahData();
-                break;
-            case "4":
-                pilihJenisLinkedList();
-                break;
-            default :
-                System.out.println("Nilai yang anda masukkan salah");
+        switch (inputUser) {
+            case "1" -> pilihOperasiTambahData();
+            case "2" -> pilihOperasiHapusData();
+            case "3" -> pilihOperasiCariUbahData();
+            case "4" -> pilihJenisLinkedList();
+            default -> System.out.println("Nilai yang anda masukkan salah");
         }
 
         input.close();
@@ -76,25 +61,16 @@ public class DoubleLinkedListKel3 {
         System.out.println("4. Cetak Data");
         System.out.println("5. Kembali");
         System.out.print("Silahkan Pilih [1/2/3/4/5] : ");inputUser = input.next();
-        switch(inputUser) {
-            case "1" :
-                tambahDataAwal();
-                break;
-            case "2" :
-                tambahDataTengah();
-                break;
-            case "3":
-                tambahDataAkhir();
-                break;
-            case "4":
-                cetakDataUser("tambah");
-                break;
-            case "5":
+        switch (inputUser) {
+            case "1" -> tambahDataAwal();
+            case "2" -> tambahDataTengah();
+            case "3" -> tambahDataAkhir();
+            case "4" -> cetakDataUser("tambah");
+            case "5" -> {
                 pilihOperasiLinkedList();
                 System.out.println();
-                break;
-            default :
-                System.out.println("Nilai yang anda masukkan salah");
+            }
+            default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
@@ -109,24 +85,13 @@ public class DoubleLinkedListKel3 {
         System.out.println("4. Cetak Data");
         System.out.println("5. Kembali");
         System.out.print("Silahkan Pilih [1/2/3/4] : ");inputUser = input.next();
-        switch(inputUser) {
-            case "1" :
-                hapusDataAwal();
-                break;
-            case "2" :
-                hapusDataTengah();
-                break;
-            case "3":
-                hapusDataAkhir();
-                break;
-            case "4":
-                cetakDataUser("hapus");
-                break;
-            case "5":
-                pilihOperasiLinkedList();
-                break;
-            default :
-                System.out.println("Nilai yang anda masukkan salah");
+        switch (inputUser) {
+            case "1" -> hapusDataAwal();
+            case "2" -> hapusDataTengah();
+            case "3" -> hapusDataAkhir();
+            case "4" -> cetakDataUser("hapus");
+            case "5" -> pilihOperasiLinkedList();
+            default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
@@ -139,18 +104,11 @@ public class DoubleLinkedListKel3 {
         System.out.println("2. Pengubahan Data");
         System.out.println("3. Kembali");
         System.out.print("Silahkan Pilih [1/2] : ");inputUser = input.next();
-        switch(inputUser) {
-            case "1" :
-                System.out.println("1. Cari Data");
-                break;
-            case "2" :
-                System.out.println("2. Ganti Data");
-                break;
-            case "3" :
-                pilihOperasiLinkedList();
-                break;
-            default :
-                System.out.println("Nilai yang anda masukkan salah");
+        switch (inputUser) {
+            case "1" -> System.out.println("1. Cari Data");
+            case "2" -> System.out.println("2. Ganti Data");
+            case "3" -> pilihOperasiLinkedList();
+            default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
