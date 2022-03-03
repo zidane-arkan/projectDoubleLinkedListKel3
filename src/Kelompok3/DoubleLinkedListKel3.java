@@ -7,11 +7,11 @@ import java.util.LinkedList;
 //import linkedList.ManualDoubleLinkedList;
 
 public class DoubleLinkedListKel3 {
+    //Manual Double Linked List
     static ManualDoubleLinkedList listUser = new ManualDoubleLinkedList();
-    //	static ManualDoubleLinkedList getUserData() {
-//		ManualDoubleLinkedList listUser = new ManualDoubleLinkedList();
-//		return listUser;
-//	}
+    //Pustaka Linked List
+
+    //Jenis Linked List
     static void pilihJenisLinkedList() {
         Scanner input = new Scanner(System.in);
         String inputUser;
@@ -21,14 +21,16 @@ public class DoubleLinkedListKel3 {
         System.out.println("3. KELUAR");
         System.out.print("Silahkan Pilih [1/2/3] : ");inputUser = input.next();
         switch (inputUser) {
-            case "1" -> pilihOperasiLinkedList();
+            case "1" -> pilihOperasiManualLinkedList();
             case "2" -> System.out.println("2. PUSTAKA");
             case "3" -> System.out.println("*** PROGRAM BERAKHIR ***");
             default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
-    static void pilihOperasiLinkedList() {
+
+    //Pilih Operasi Linked List
+    static void pilihOperasiManualLinkedList() {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
@@ -49,6 +51,8 @@ public class DoubleLinkedListKel3 {
 
         input.close();
     }
+
+    //Operasi Manual Linked List
     //Function Operasi Data
     static void pilihOperasiTambahData() {
         Scanner input = new Scanner(System.in);
@@ -67,7 +71,7 @@ public class DoubleLinkedListKel3 {
             case "3" -> tambahDataAkhir();
             case "4" -> cetakDataUser("tambah");
             case "5" -> {
-                pilihOperasiLinkedList();
+                pilihOperasiManualLinkedList();
                 System.out.println();
             }
             default -> System.out.println("Nilai yang anda masukkan salah");
@@ -90,7 +94,7 @@ public class DoubleLinkedListKel3 {
             case "2" -> hapusDataTengah();
             case "3" -> hapusDataAkhir();
             case "4" -> cetakDataUser("hapus");
-            case "5" -> pilihOperasiLinkedList();
+            case "5" -> pilihOperasiManualLinkedList();
             default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
@@ -107,7 +111,7 @@ public class DoubleLinkedListKel3 {
         switch (inputUser) {
             case "1" -> System.out.println("1. Cari Data");
             case "2" -> System.out.println("2. Ganti Data");
-            case "3" -> pilihOperasiLinkedList();
+            case "3" -> pilihOperasiManualLinkedList();
             default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
@@ -179,6 +183,7 @@ public class DoubleLinkedListKel3 {
     }
 
     //Fungsi Hapus Data
+    //Hapus Data Awal
     static void hapusDataAwal() {
         Scanner input = new Scanner(System.in);
         String inputUser = "";
@@ -242,6 +247,9 @@ public class DoubleLinkedListKel3 {
         }
         pilihOperasiHapusData();
     }
+
+    //Pustaka Linked List
+
     //Fungsi Cetak Data
     static void cetakDataUser(String tipe) {
         Scanner input = new Scanner(System.in);
@@ -261,6 +269,7 @@ public class DoubleLinkedListKel3 {
             pilihOperasiHapusData();
         }
     }
+
     public static void main(String[] args) {
         pilihJenisLinkedList();
         // TODO Auto-generated method stub
