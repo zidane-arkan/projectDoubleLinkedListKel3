@@ -34,7 +34,7 @@ public class DoubleLinkedListKel3 {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
-        System.out.println("*** OPERASI DOUBLE LINKED LIST ***");
+        System.out.println("*** OPERASI MANUAL DOUBLE LINKED LIST ***");
         System.out.println("1. Tambah Data");
         System.out.println("2. Hapus Data");
         System.out.println("3. Pencarian/Pengubahan Data");
@@ -58,7 +58,7 @@ public class DoubleLinkedListKel3 {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
-        System.out.println("*** OPERASI DOUBLE LINKED LIST ***");
+        System.out.println("*** OPERASI TAMBAH DATA DOUBLE LINKED LIST ***");
         System.out.println("1. Tambah Data Awal");
         System.out.println("2. Tambah Data Tengah");
         System.out.println("3. Tambah Data Akhir");
@@ -82,7 +82,7 @@ public class DoubleLinkedListKel3 {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
-        System.out.println("*** OPERASI DOUBLE LINKED LIST ***");
+        System.out.println("*** OPERASI HAPUS DATA DOUBLE LINKED LIST ***");
         System.out.println("1. Hapus Data Awal");
         System.out.println("2. Hapus Data Tengah");
         System.out.println("3. Hapus Data Akhir");
@@ -103,15 +103,17 @@ public class DoubleLinkedListKel3 {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
-        System.out.println("*** OPERASI DOUBLE LINKED LIST ***");
+        System.out.println("*** OPERASI CARI/UBAH DATA DOUBLE LINKED LIST ***");
         System.out.println("1. Pencarian Data");
         System.out.println("2. Pengubahan Data");
-        System.out.println("3. Kembali");
+        System.out.println("3. Cetak Data");
+        System.out.println("4. Kembali");
         System.out.print("Silahkan Pilih [1/2] : ");inputUser = input.next();
         switch (inputUser) {
-            case "1" -> System.out.println("1. Cari Data");
-            case "2" -> System.out.println("2. Ganti Data");
-            case "3" -> pilihOperasiManualLinkedList();
+            case "1" -> cariDataManual();
+            case "2" -> gantiDataManual();
+            case "3" -> cetakDataUser("cariUbah");
+            case "4" -> pilihOperasiManualLinkedList();
             default -> System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
@@ -282,6 +284,7 @@ public class DoubleLinkedListKel3 {
         Scanner input = new Scanner(System.in);
         String dataGanti = "";
         Integer nilaiBaru;
+//        Integer panjangArray = listUser.length();
         boolean checkData;
         System.out.println();
         System.out.println("*** OPERASI MANUAL GANTI DATA DOUBLE LINKED LIST ***");
@@ -292,19 +295,23 @@ public class DoubleLinkedListKel3 {
         System.out.println();
         while(!dataGanti.equalsIgnoreCase("q")) {
             System.out.print("Masukkan Data Keberapa yang ingin diganti : ");dataGanti = input.next();
-            if(!dataGanti.equalsIgnoreCase("q")) {
-                System.out.print("Masukkan Nilai Baru : ");nilaiBaru = input.nextInt();
-//                checkData = listUser.replaceData(Integer.parseInt(dataGanti),nilaiBaru);
-//                if(checkData) {
-//                    System.out.println();
-//                    System.out.println("** Data Berhasil Di Ganti **");
-//                    System.out.println();
+//            if(!dataGanti.equalsIgnoreCase("q")) {
+//                if(Integer.parseInt(dataGanti) <= panjangArray) {
+//                    System.out.print("Masukkan Nilai Baru : ");nilaiBaru = input.nextInt();
+//                    checkData = listUser.replaceData(Integer.parseInt(dataGanti),nilaiBaru);
+//                    if(checkData) {
+//                        System.out.println();
+//                        System.out.println("** Data Berhasil Di Ganti **");
+//                        System.out.println();
+//                    }else {
+//                        System.out.println();
+//                        System.out.println("!! Maaf data yang anda cari tidak ditemukan dan tidak dapat diganti !!");
+//                        System.out.println();
+//                    }
 //                }else {
-//                    System.out.println();
-//                    System.out.println("!! Maaf data yang anda cari tidak ditemukan dan tidak dapat diganti !!");
-//                    System.out.println();
+//                    System.out.println("!! DATA ANDA KURANG DARI " + Integer.parseInt(dataGanti) + " !!");
 //                }
-            }
+//            }
         }
         pilihOperasiCariUbahData();
     }
@@ -332,12 +339,14 @@ public class DoubleLinkedListKel3 {
             pilihOperasiTambahData();
         }else if(tipe.equalsIgnoreCase("hapus")) {
             pilihOperasiHapusData();
+        }else{
+            pilihOperasiCariUbahData();;
         }
     }
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-//       pilihJenisLinkedList();
+       pilihJenisLinkedList();
 //		ManualDoubleLinkedList listUser1 = new ManualDoubleLinkedList();
 //		listUser1.setMiddle(10);
 //		listUser1.setMiddle(20);
