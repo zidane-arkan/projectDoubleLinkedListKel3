@@ -312,6 +312,7 @@ public class DoubleLinkedListKel3 {
     //END MANUAL DOUBLE LINKED LIST
 
     //START PUSTAKA DOUBLE LINKED LIST
+
     //END PUSTAKA DOUBLE LINKED LIST
 
     //Fungsi Cetak Data
@@ -335,10 +336,8 @@ public class DoubleLinkedListKel3 {
     }
 
     public static void main(String[] args) {
-        pilihJenisLinkedList();
         // TODO Auto-generated method stub
-        //23131
-        // tes edit -nadia
+//       pilihJenisLinkedList();
 //		ManualDoubleLinkedList listUser1 = new ManualDoubleLinkedList();
 //		listUser1.setMiddle(10);
 //		listUser1.setMiddle(20);
