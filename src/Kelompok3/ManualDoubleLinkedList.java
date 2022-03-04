@@ -35,7 +35,7 @@ public class ManualDoubleLinkedList {
 			n = n.prevAddress;	
 		}
 		System.out.println("]");
-    }
+    }    
     public boolean find(int nilaiData) {
 	boolean cari = false;
 	Node n = head;
@@ -48,6 +48,27 @@ public class ManualDoubleLinkedList {
 	}
 	return cari;
     }
+    public void hapusAwal() {
+	Node node = head.nextAddress;
+	node.prevAddress = null;
+	head = node;
+     }
+     public void hapusTengah(Node node) {
+	Node last = head;
+	while(last.nextAddress != null) {
+		if(last.nextAddress == node) {
+			last.nextAddress = node.nextAddress;
+			node.next.prevAddress = last;
+			break;
+		}
+		last = last.nextAddress;
+	     }
+     }
+     public void hapusAkhir() {
+	Node node = tail.prevAddress;
+	node.nextAddress = null;
+	tail = node;
+     }
     public static void main(String[] args){
         ManualDoubleLinkedList DL = new ManualDoubleLinkedList();
         boolean asc = true;
@@ -65,6 +86,18 @@ public class ManualDoubleLinkedList {
         System.out.print("Cetak data: ");
 	DL.printList(asc);
         
+	DL.hapusAwal();
+	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Awal: ");
+	DL.printList(asc);
+		
+	DL.hapusTengah(tiga);
+	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Tengah: ");
+	DL.printList(asc);
+		
+	DL.hapusAkhir();
+	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Akhir: ");
+	DL.printList(asc);
+	    
         System.out.println();
 	if(DL.find(2)) {
 		System.out.println("Data ditemukan");
