@@ -7,7 +7,7 @@ import java.util.LinkedList;
 //import linkedList.ManualDoubleLinkedList;
 
 public class DoubleLinkedListKel3 {
-    //Manual Double Linked List
+    //START MANUAL DOUBLE LINKED LIST
     static ManualDoubleLinkedList listUser = new ManualDoubleLinkedList();
     //Pustaka Linked List
 
@@ -248,7 +248,68 @@ public class DoubleLinkedListKel3 {
         pilihOperasiHapusData();
     }
 
-    //Pustaka Linked List
+    //Fungsi Cari Data
+    static void cariDataManual() {
+        Scanner input = new Scanner(System.in);
+        String dataCari = "";
+        int lokasiData = 0;
+        System.out.println();
+        System.out.println("*** OPERASI MANUAL CARI DATA DOUBLE LINKED LIST ***");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data Angka (Integer) Yang Ingin Dicari");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!dataCari.equalsIgnoreCase("q")) {
+            System.out.print("Masukkan Data yang ingin anda cari : ");dataCari = input.next();
+            if(!dataCari.equalsIgnoreCase("q")) {
+//                lokasiData = listUser.findData(Integer.parseInt(dataCari));
+                if(lokasiData != 0) {
+                    System.out.println();
+                    System.out.println("** Data yang anda cari ada didalam Double Linked List **");
+                    System.out.println();
+                }else {
+                    System.out.println();
+                    System.out.println("!! Maaf data yang anda cari tidak ditemukan !!");
+                    System.out.println();
+                }
+            }
+        }
+        pilihOperasiCariUbahData();
+    }
+    //Fungsi Ganti Data
+    static void gantiDataManual() {
+        Scanner input = new Scanner(System.in);
+        String dataGanti = "";
+        Integer nilaiBaru;
+        boolean checkData;
+        System.out.println();
+        System.out.println("*** OPERASI MANUAL GANTI DATA DOUBLE LINKED LIST ***");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data ke Berapa Yang Ingin Diganti dan Angka Penggantinya");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!dataGanti.equalsIgnoreCase("q")) {
+            System.out.print("Masukkan Data Keberapa yang ingin diganti : ");dataGanti = input.next();
+            if(!dataGanti.equalsIgnoreCase("q")) {
+                System.out.print("Masukkan Nilai Baru : ");nilaiBaru = input.nextInt();
+//                checkData = listUser.replaceData(Integer.parseInt(dataGanti),nilaiBaru);
+//                if(checkData) {
+//                    System.out.println();
+//                    System.out.println("** Data Berhasil Di Ganti **");
+//                    System.out.println();
+//                }else {
+//                    System.out.println();
+//                    System.out.println("!! Maaf data yang anda cari tidak ditemukan dan tidak dapat diganti !!");
+//                    System.out.println();
+//                }
+            }
+        }
+        pilihOperasiCariUbahData();
+    }
+    //END MANUAL DOUBLE LINKED LIST
+
 
     //Fungsi Cetak Data
     static void cetakDataUser(String tipe) {
