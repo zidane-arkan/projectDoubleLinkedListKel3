@@ -1,14 +1,16 @@
 package Kelompok3;
 
-import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.LinkedList;
 
 //import linkedList.ManualDoubleLinkedList.Node;
 //import linkedList.ManualDoubleLinkedList;
 
 public class DoubleLinkedListKel3 {
     //START MANUAL DOUBLE LINKED LIST
+
     static ManualDoubleLinkedList listUser = new ManualDoubleLinkedList();
+
     //Jenis Linked List
     static void pilihJenisLinkedList() {
         Scanner input = new Scanner(System.in);
@@ -315,8 +317,9 @@ public class DoubleLinkedListKel3 {
     }
 
     //END MANUAL DOUBLE LINKED LIST
-    
+
     //START PUSTAKA DOUBLE LINKED LIST
+
     //END PUSTAKA DOUBLE LINKED LIST
 
     //Fungsi Cetak Data
