@@ -8,8 +8,8 @@ import java.util.LinkedList;
 
 public class DoubleLinkedListKel3 {
     //START MANUAL DOUBLE LINKED LIST
+
     static ManualDoubleLinkedList listUser = new ManualDoubleLinkedList();
-    //Pustaka Linked List
 
     //Jenis Linked List
     static void pilihJenisLinkedList() {
@@ -308,8 +308,11 @@ public class DoubleLinkedListKel3 {
         }
         pilihOperasiCariUbahData();
     }
+
     //END MANUAL DOUBLE LINKED LIST
 
+    //START PUSTAKA DOUBLE LINKED LIST
+    //END PUSTAKA DOUBLE LINKED LIST
 
     //Fungsi Cetak Data
     static void cetakDataUser(String tipe) {
