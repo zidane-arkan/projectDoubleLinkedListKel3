@@ -319,6 +319,70 @@ public class DoubleLinkedListKel3 {
     //END MANUAL DOUBLE LINKED LIST
 
     //START PUSTAKA DOUBLE LINKED LIST
+    
+        //Function Pilih Operasi Cari dan Ubah Data Pustaka
+    static void pilihOperasiCariUbahDataPustaka(LinkedList llist) {
+        Scanner input = new Scanner(System.in);
+        String inputUser;
+        System.out.println();
+        System.out.println("*** OPERASI DOUBLE LINKED LIST ***");
+        System.out.println("1. Pencarian Data");
+        System.out.println("2. Pengubahan Data");
+        System.out.println("3. Kembali");
+        System.out.print("Silahkan Pilih [1/2] : ");inputUser = input.next();
+        switch (inputUser) {
+        case "1" : System.out.println("1. Cari Data"); cariDataPustaka(llist);
+        case "2" : System.out.println("2. Ganti Data"); ubahDataPustaka(llist);
+        case "3" : pilihOperasiManualLinkedList(llist);
+        default : System.out.println("Nilai yang anda masukkan salah");
+        }
+        input.close();
+    }
+    
+    //Method Cari Data Pustaka
+    static void cariDataPustaka(LinkedList llist) {
+        Scanner input = new Scanner(System.in);
+        String cariData = "";
+        System.out.println();
+        System.out.println("*** OPERASI MANUAL CARI DATA DOUBLE LINKED LIST ***");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data Angka (Integer) Yang Ingin Dicari");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!cariData.equalsIgnoreCase("q")) {
+            System.out.print("Masukkan Data yang ingin anda cari : ");cariData = input.next();
+        	boolean flag = false;
+			for (int i = 0; i < llist.size(); i++) {
+				if (llist.get(i).equals(cariData)) {
+					System.out.println("Data " + cariData + " ditemukan");
+					flag = true;
+					break;
+				}
+			}
+			if (!flag)
+				System.out.println("Data " + cariData + " tidak ditemukan");
+		}
+		pilihOperasiCariUbahDataPustaka(llist);
+	}
+    
+    //Method Ubah Data Pustaka
+    static void ubahDataPustaka(LinkedList llist) {
+    	Scanner input = new Scanner(System.in);
+    	int ubah;
+		System.out.print("Data keberapa yang ingin anda ubah? : ");
+		ubah = input.nextInt();
+		boolean flag = false;
+		if (ubah <= llist.size()) {
+				System.out.print("Masukan data baru : ");
+				int dataBaru = input.nextInt();
+				llist.set((ubah-1), dataBaru);
+				flag = true;
+		}
+		
+		if (!flag)
+			System.out.println("Data ke - " + ubah + " tidak ada.");
+    }
 
     //END PUSTAKA DOUBLE LINKED LIST
 
