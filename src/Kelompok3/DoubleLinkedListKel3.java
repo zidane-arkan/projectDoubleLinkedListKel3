@@ -274,6 +274,7 @@ public class DoubleLinkedListKel3 {
         pilihJenisLinkedList();
         // TODO Auto-generated method stub
         //23131
+        // tes edit -nadia
 //		ManualDoubleLinkedList listUser1 = new ManualDoubleLinkedList();
 //		listUser1.setMiddle(10);
 //		listUser1.setMiddle(20);
