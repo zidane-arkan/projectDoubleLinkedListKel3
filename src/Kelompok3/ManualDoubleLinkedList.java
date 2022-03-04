@@ -27,14 +27,15 @@ public class ManualDoubleLinkedList {
         System.out.print("[ ");
         
 	while(n != null) {
-		System.out.print(n.nilaiData + " ");	
-		if(asc){
-			n = n.nextAddress;
-		}
-		else{
-			n = n.prevAddress;	
-		}
-		System.out.println("]");
+              System.out.print(n.nilaiData + " ");	
+              if(asc){
+                   n = n.nextAddress;
+              }
+              else{
+                   n = n.prevAddress;	
+              }
+	}
+        System.out.println("]");
     }    
     public boolean find(int nilaiData) {
 	boolean cari = false;
@@ -58,7 +59,7 @@ public class ManualDoubleLinkedList {
 	while(last.nextAddress != null) {
 		if(last.nextAddress == node) {
 			last.nextAddress = node.nextAddress;
-			node.next.prevAddress = last;
+			node.nextAddress.prevAddress = last;
 			break;
 		}
 		last = last.nextAddress;
@@ -98,12 +99,13 @@ public class ManualDoubleLinkedList {
 	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Akhir: ");
 	DL.printList(asc);
 	    
-        System.out.println();
-	if(DL.find(2)) {
-		System.out.println("Data ditemukan");
-	}
-	else {
-		System.out.println("Data tidak ditemukan");
+       System.out.println();
+       System.out.println("Pencarian Data");
+       int temukan = 2;
+       if (DL.find(temukan)) {
+	    System.out.println("Data " + temukan + " ditemukan");
+	} else {
+	    System.out.println("Data " + temukan + " tidak ditemukan");
 	}
     }
 }
