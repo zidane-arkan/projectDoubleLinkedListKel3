@@ -62,7 +62,8 @@ public class ManualDoubleLinkedList {
               }
 	}
         System.out.println("]");
-    }    
+    }
+    
     public boolean find(int nilaiData) {
 	boolean cari = false;
 	Node n = head;
@@ -75,13 +76,15 @@ public class ManualDoubleLinkedList {
 	}
 	return cari;
     }
+
     public void hapusAwal() {
 	Node node = head.nextAddress;
 	node.prevAddress = null;
 	head = node;
      }
-     public void hapusTengah(Node node) {
-	Node last = head;
+
+    public void hapusTengah(Node node) {
+    Node last = head;
 	while(last.nextAddress != null) {
 		if(last.nextAddress == node) {
 			last.nextAddress = node.nextAddress;
@@ -91,47 +94,9 @@ public class ManualDoubleLinkedList {
 		last = last.nextAddress;
 	     }
      }
-     public void hapusAkhir() {
-	Node node = tail.prevAddress;
-	node.nextAddress = null;
-	tail = node;
+    public void hapusAkhir() {
+	    Node node = tail.prevAddress;
+	    node.nextAddress = null;
+	    tail = node;
      }
-    public static void main(String[] args){
-        ManualDoubleLinkedList DL = new ManualDoubleLinkedList();
-        boolean asc = true;
-        
-        DL.head = new Node(1);
-        Node dua = new Node(2);
-        Node tiga = new Node(3);
-        
-        DL.head.nextAddress = dua;
-        dua.prevAddress = DL.head;
-        dua.nextAddress = tiga;
-        tiga.prevAddress = dua;
-        DL.tail = tiga;
-        
-        System.out.print("Cetak data: ");
-	DL.printList(asc);
-        
-	DL.hapusAwal();
-	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Awal: ");
-	DL.printList(asc);
-		
-	DL.hapusTengah(tiga);
-	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Tengah: ");
-	DL.printList(asc);
-		
-	DL.hapusAkhir();
-	System.out.print("Data setelah dilakukan Operasi Penghapusan Data Akhir: ");
-	DL.printList(asc);
-	    
-       System.out.println();
-       System.out.println("Pencarian Data");
-       int temukan = 2;
-       if (DL.find(temukan)) {
-	    System.out.println("Data " + temukan + " ditemukan");
-	} else {
-	    System.out.println("Data " + temukan + " tidak ditemukan");
-	}
-    }
 }

@@ -318,10 +318,33 @@ public class DoubleLinkedListKel3 {
 
     //END MANUAL DOUBLE LINKED LIST
 
+
     //START PUSTAKA DOUBLE LINKED LIST
-    
-        //Function Pilih Operasi Cari dan Ubah Data Pustaka
-    static void pilihOperasiCariUbahDataPustaka(LinkedList llist) {
+    //Operasi Pustaka Linked List
+    static LinkedList<Integer> PustakaDoublelinkedList = new LinkedList<>();
+    //Pilih Operasi Linked List
+    static void pilihOperasiPustakaLinkedList() {
+        Scanner input = new Scanner(System.in);
+        String inputUser;
+        System.out.println();
+        System.out.println("*** OPERASI PUSTAKA DOUBLE LINKED LIST ***");
+//        System.out.println("1. Tambah Data");
+//        System.out.println("2. Hapus Data");
+        System.out.println("3. Pencarian/Pengubahan Data");
+        System.out.println("4. Kembali");
+        System.out.print("Silahkan Pilih [1/2/3/4] : ");inputUser = input.next();
+        System.out.println();
+        switch (inputUser) {
+//            case "1" -> pilihOperasiTambahDataPustaka();
+//            case "2" -> pilihOperasiHapusDataPustaka();
+            case "3" -> pilihOperasiCariUbahDataPustaka();
+            case "4" -> pilihJenisLinkedList();
+            default -> System.out.println("Nilai yang anda masukkan salah");
+        }
+        input.close();
+    }
+    //Function Pilih Operasi Cari dan Ubah Data Pustaka
+    static void pilihOperasiCariUbahDataPustaka() {
         Scanner input = new Scanner(System.in);
         String inputUser;
         System.out.println();
@@ -331,16 +354,16 @@ public class DoubleLinkedListKel3 {
         System.out.println("3. Kembali");
         System.out.print("Silahkan Pilih [1/2] : ");inputUser = input.next();
         switch (inputUser) {
-        case "1" : System.out.println("1. Cari Data"); cariDataPustaka(llist);
-        case "2" : System.out.println("2. Ganti Data"); ubahDataPustaka(llist);
-        case "3" : pilihOperasiManualLinkedList(llist);
+        case "1" : System.out.println("1. Cari Data"); cariDataPustaka();
+        case "2" : System.out.println("2. Ganti Data"); ubahDataPustaka();
+        case "3" : pilihOperasiPustakaLinkedList();
         default : System.out.println("Nilai yang anda masukkan salah");
         }
         input.close();
     }
     
     //Method Cari Data Pustaka
-    static void cariDataPustaka(LinkedList llist) {
+    static void cariDataPustaka() {
         Scanner input = new Scanner(System.in);
         String cariData = "";
         System.out.println();
@@ -353,8 +376,8 @@ public class DoubleLinkedListKel3 {
         while(!cariData.equalsIgnoreCase("q")) {
             System.out.print("Masukkan Data yang ingin anda cari : ");cariData = input.next();
         	boolean flag = false;
-			for (int i = 0; i < llist.size(); i++) {
-				if (llist.get(i).equals(cariData)) {
+			for (int i = 0; i < PustakaDoublelinkedList.size(); i++) {
+				if (PustakaDoublelinkedList.get(i) == Integer.parseInt(cariData)) {
 					System.out.println("Data " + cariData + " ditemukan");
 					flag = true;
 					break;
@@ -363,23 +386,22 @@ public class DoubleLinkedListKel3 {
 			if (!flag)
 				System.out.println("Data " + cariData + " tidak ditemukan");
 		}
-		pilihOperasiCariUbahDataPustaka(llist);
+		pilihOperasiCariUbahDataPustaka();
 	}
     
     //Method Ubah Data Pustaka
-    static void ubahDataPustaka(LinkedList llist) {
+    static void ubahDataPustaka() {
     	Scanner input = new Scanner(System.in);
     	int ubah;
 		System.out.print("Data keberapa yang ingin anda ubah? : ");
 		ubah = input.nextInt();
 		boolean flag = false;
-		if (ubah <= llist.size()) {
-				System.out.print("Masukan data baru : ");
-				int dataBaru = input.nextInt();
-				llist.set((ubah-1), dataBaru);
-				flag = true;
-		}
-		
+		if (ubah <= PustakaDoublelinkedList.size()) {
+            System.out.print("Masukan data baru : ");
+            int dataBaru = input.nextInt();
+            PustakaDoublelinkedList.set((ubah - 1), dataBaru);
+            flag = true;
+        }
 		if (!flag)
 			System.out.println("Data ke - " + ubah + " tidak ada.");
     }
