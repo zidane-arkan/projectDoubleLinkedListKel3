@@ -13,6 +13,32 @@ public class ManualDoubleLinkedList {
             nilaiData = d;
             nextAddress = null;
             prevAddress = null;
+            public void removeFirst() {
+		Object head;
+		Node node = head.next;
+		node.prev = null;
+		head = node ;
+	}
+	
+	
+	public void remove(Node node ) {
+		Node last = head;
+		while (last.next != null) {
+			if (last.next == node) {
+				last.next.prev = last;
+				node.next.prev = last;
+				break;
+			}
+			last = last.next;
+		}
+	}
+	
+	public void removeLast() {
+		Node node = tail.prev;
+		node.next = null;
+		tail = node;
+		
+	}
         }
     }
 }
