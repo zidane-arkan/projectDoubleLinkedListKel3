@@ -335,7 +335,8 @@ public class DoubleLinkedListKel3 {
         }
     }
     //END MANUAL DOUBLE LINKED LIST
-    
+
+
     //START PUSTAKA DOUBLE LINKED LIST
 
     //Operasi Pustaka Linked List
@@ -422,8 +423,8 @@ public class DoubleLinkedListKel3 {
         System.out.println("4. Kembali");
         System.out.print("Silahkan Pilih [1/2] : ");inputUser = input.next();
         switch (inputUser) {
-            case "1" -> cariDataManual();
-            case "2" -> gantiDataManual();
+            case "1" -> cariDataPustaka();
+            case "2" -> ubahDataPustaka();
             case "3" -> cetakDataUserPustaka("cariUbahPustaka");
             case "4" -> {
                 pilihOperasiPustakaLinkedList();
@@ -433,7 +434,7 @@ public class DoubleLinkedListKel3 {
         }
         input.close();
     }
-    
+
     //Method Cari Data Pustaka
     static void cariDataPustaka() {
         Scanner input = new Scanner(System.in);
@@ -447,35 +448,52 @@ public class DoubleLinkedListKel3 {
         System.out.println();
         while(!cariData.equalsIgnoreCase("q")) {
             System.out.print("Masukkan Data yang ingin anda cari : ");cariData = input.next();
-        	boolean flag = false;
-            for (Integer integer : PustakaDoublelinkedList) {
-                if (integer == Integer.parseInt(cariData)) {
-                    System.out.println("Data " + cariData + " ditemukan");
-                    flag = true;
-                    break;
+            boolean flag = false;
+            if(!cariData.equalsIgnoreCase("q")) {
+                for (Integer integer : PustakaDoublelinkedList) {
+                    if (integer == Integer.parseInt(cariData)) {
+                        System.out.println("Data " + cariData + " ditemukan");
+                        flag = true;
+                        break;
+                    }
                 }
+                if (!flag)
+                    System.out.println("Data " + cariData + " tidak ditemukan");
+            }else {
+                pilihOperasiCariUbahDataPustaka();
             }
-			if (!flag)
-				System.out.println("Data " + cariData + " tidak ditemukan");
-		}
-		pilihOperasiCariUbahDataPustaka();
-	}
-    
+        }
+    }
     //Method Ubah Data Pustaka
     static void ubahDataPustaka() {
-    	Scanner input = new Scanner(System.in);
-    	int ubah;
-		System.out.print("Data keberapa yang ingin anda ubah? : ");
-		ubah = input.nextInt();
-		boolean flag = false;
-		if (ubah <= PustakaDoublelinkedList.size()) {
-            System.out.print("Masukan data baru : ");
-            int dataBaru = input.nextInt();
-            PustakaDoublelinkedList.set((ubah - 1), dataBaru);
-            flag = true;
+        Scanner input = new Scanner(System.in);
+        String ubah = "";
+        System.out.println();
+        System.out.println("*** OPERASI PUSTAKA UBAH DATA DOUBLE LINKED LIST ***");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data ke Berapa Yang Ingin Diganti dan Angka Penggantinya");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!ubah.equalsIgnoreCase("q")){
+            System.out.print("Data keberapa yang ingin anda ubah? : "); ubah = input.next();
+            if(!ubah.equalsIgnoreCase("q")) {
+                boolean flag = false;
+                if (Integer.parseInt(ubah) <= PustakaDoublelinkedList.size()) {
+                    System.out.print("Masukan data baru : ");int dataBaru = input.nextInt();
+                    PustakaDoublelinkedList.set((Integer.parseInt(ubah) - 1), dataBaru);
+                    System.out.println();
+                    System.out.println("** Data Berhasil Di Ganti **");
+                    System.out.println();
+                    flag = true;
+                }
+                if (!flag) {
+                    System.out.println("Data ke - " + ubah + " tidak ada.");
+                }
+            }else {
+                pilihOperasiCariUbahDataPustaka();
+            }
         }
-		if (!flag)
-			System.out.println("Data ke - " + ubah + " tidak ada.");
     }
 
     //Fungsi Cetak Data Pustaka
