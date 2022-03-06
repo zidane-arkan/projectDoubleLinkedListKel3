@@ -347,14 +347,14 @@ public class DoubleLinkedListKel3 {
         String inputUser;
         System.out.println();
         System.out.println("*** OPERASI PUSTAKA DOUBLE LINKED LIST ***");
-//        System.out.println("1. Tambah Data");
+        System.out.println("1. Tambah Data");
 //        System.out.println("2. Hapus Data");
         System.out.println("3. Pencarian/Pengubahan Data");
         System.out.println("4. Kembali");
         System.out.print("Silahkan Pilih [1/2/3/4] : ");inputUser = input.next();
         System.out.println();
         switch (inputUser) {
-//            case "1" -> pilihOperasiTambahDataPustaka();
+            case "1" -> pilihOperasiTambahDataPustaka();
 //            case "2" -> pilihOperasiHapusDataPustaka();
             case "3" -> pilihOperasiCariUbahDataPustaka();
             case "4" -> pilihJenisLinkedList();
@@ -496,6 +496,7 @@ public class DoubleLinkedListKel3 {
         }
     }
 
+
     //Fungsi Cetak Data Pustaka
     static void cetakDataUserPustaka(String tipe) {
         Scanner input = new Scanner(System.in);
@@ -510,7 +511,7 @@ public class DoubleLinkedListKel3 {
             System.out.print("Masukkan huruf 'q' untuk kembali ke menu sebelumnya : ");dataUser = input.next();
         }
         if(tipe.equalsIgnoreCase("tambahPustaka")) {
-//            pilihOperasiTambahDataPustaka();
+            pilihOperasiTambahDataPustaka();
         }else if(tipe.equalsIgnoreCase("hapusPustaka")) {
 //            pilihOperasiHapusDataPustaka();
         }else if(tipe.equalsIgnoreCase("cariUbahPustaka")) {
