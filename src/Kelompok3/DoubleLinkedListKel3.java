@@ -495,6 +495,75 @@ public class DoubleLinkedListKel3 {
             }
         }
     }
+    //Tambah Data Operasi Pustaka
+    //Tambah Data Awal
+    static void tambahDataAwalPustaka() {
+        Scanner input = new Scanner(System.in);
+        String dataUser = "";
+        int jumlahData = 1;
+        System.out.println();
+        System.out.println("* OPERASI PUSTAKA TAMBAH DATA AWAL DOUBLE LINKED LIST *");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data Angka ");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!dataUser.equalsIgnoreCase("q")) {
+            System.out.print("Data ke-" + jumlahData + ": ");dataUser = input.next();
+            if(!dataUser.equalsIgnoreCase("q")) {
+                PustakaDoublelinkedList.addFirst(Integer.parseInt(dataUser));
+            }
+            jumlahData++;
+        }
+        pilihOperasiTambahDataPustaka();
+    }
+    //Tambah Data Tengah
+    static int middlePustaka() {
+        int panjangData = PustakaDoublelinkedList.size();
+        int nodeTengah = (panjangData % 2 == 0) ? (panjangData / 2) : ((panjangData + 1) / 2);
+        return nodeTengah;
+    }
+    static void tambahDataTengahPustaka() {
+        Scanner input = new Scanner(System.in);
+        String dataUser = "";
+        int jumlahData = 1;
+        System.out.println();
+        System.out.println("* OPERASI PUSTAKA TAMBAH DATA TENGAH DOUBLE LINKED LIST *");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data Angka ");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!dataUser.equalsIgnoreCase("q")) {
+            System.out.print("Data ke-" + jumlahData + ": ");dataUser = input.next();
+            if(!dataUser.equalsIgnoreCase("q")) {
+                PustakaDoublelinkedList.add(middlePustaka(), Integer.parseInt(dataUser));
+            }
+            jumlahData++;
+        }
+        pilihOperasiTambahDataPustaka();
+    }
+    //Tambah Data Akhir
+    static void tambahDataAkhirPustaka() {
+        Scanner input = new Scanner(System.in);
+        String dataUser = "";
+        int jumlahData = 1;
+        System.out.println();
+        System.out.println("* OPERASI PUSTAKA TAMBAH DATA AWAL DOUBLE LINKED LIST *");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Data Angka ");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!dataUser.equalsIgnoreCase("q")) {
+            System.out.print("Data ke-" + jumlahData + ": ");dataUser = input.next();
+            if(!dataUser.equalsIgnoreCase("q")) {
+                PustakaDoublelinkedList.addLast(Integer.parseInt(dataUser));
+            }
+            jumlahData++;
+        }
+        pilihOperasiTambahDataPustaka();
+    }
 
 
     //Fungsi Cetak Data Pustaka
