@@ -587,6 +587,79 @@ public class DoubleLinkedListKel3 {
             pilihOperasiCariUbahDataPustaka();
         }
     }
+    //Fungsi Hapus Data
+    private static void hapusDataAwal(LinkedList llist) {
+        Scanner input = new Scanner(System.in);
+        String inputUser = "";
+        System.out.println();
+        System.out.println("*** OPERASI HAPUS DATA AWAL DOUBLE LINKED LIST ***");
+        System.out.println();
+        System.out.print("Info : ");
+        System.out.println(" - Masukkan Y (Enter) untuk menghapus data ");
+        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+        System.out.println();
+        while(!inputUser.equalsIgnoreCase("q")) {
+            System.out.print("Yakin Ingin Menghapus data di awal ? : ");
+            inputUser = input.next();
+            if(inputUser.equalsIgnoreCase("Y")) {
+//                listUser.deleteFirst();
+            	System.out.println();
+            	llist.removeFirst();
+            }
+        }
+        
+       pilihOperasiHapusData();
+  
+    }
+	   static int hapusDataTengah(LinkedList llist) {
+	        Scanner input = new Scanner(System.in);
+	        String inputUser = "";
+
+	        System.out.println();
+	        System.out.println("*** OPERASI HAPUS DATA TENGAH DOUBLE LINKED LIST ***");
+	        System.out.println();
+	        System.out.print("Info : ");
+	        System.out.println(" - Masukkan Y (Enter) untuk menghapus data ");
+	        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+	        System.out.println();
+	        while(!inputUser.equalsIgnoreCase("q")) {
+	            System.out.print("Yakin Ingin Menghapus data di tengah ? : ");
+	            inputUser = input.next();
+	            if(inputUser.equalsIgnoreCase("Y")) {
+//	                listUser.deleteMiddle();
+//	                System.out.println();
+	    			int panjangData = llist.size();
+					int nodeTengah = (panjangData % 2 == 0) ? (panjangData / 2): ((panjangData + 1)/2;
+	            	llist.remove();
+	            }
+	        }
+	        pilihOperasiHapusData();
+	        
+	    }
+	    //Hapus Data Akhir
+	    static void hapusDataAkhir(LinkedList llist) {
+	        Scanner input = new Scanner(System.in);
+	        String inputUser = "";
+
+	        System.out.println();
+	        System.out.println("*** OPERASI HAPUS DATA AKHIR DOUBLE LINKED LIST ***");
+	        System.out.println();
+	        System.out.print("Info : ");
+	        System.out.println(" - Masukkan Y (Enter) untuk menghapus data ");
+	        System.out.println("        - Masukkan huruf 'q' untuk kembali ke menu sebelumnya");
+	        System.out.println();
+	        while(!inputUser.equalsIgnoreCase("q")) {
+	            System.out.print("Yakin Ingin Menghapus data di akhir ? : ");
+	            inputUser = input.next();
+	            if(inputUser.equalsIgnoreCase("Y")) {
+	                llist.removeLast();
+	                System.out.println();
+	            }
+	        }
+	        pilihOperasiHapusData();
+
+	}
+
 
     //END PUSTAKA DOUBLE LINKED LIST
 
